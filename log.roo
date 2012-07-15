@@ -1,0 +1,32 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-07-14 15:37:53
+project --topLevelPackage sre --projectName sre --java 6 --packaging WAR
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-07-14 15:37:54
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-07-14 15:37:56
+jpa setup --database POSTGRES --provider HIBERNATE --databaseName sre --hostName localhost --userName postgres --password 1NF0RM@T1C@ 
+// [failed] database introspect --schema public
+osgi obr url add --url http://spring-roo-postgres-jdbc4-wrapper.googlecode.com/svn/repo/repository.xml
+osgi obr start --bundleSymbolicName org.postgresql.roo.wrapper.postgresql
+osgi obr url remove --url http://spring-roo-postgres-jdbc4-wrapper.googlecode.com/svn/repo/repository.xml
+addon install id 01
+// [failed] database introspect --schema public
+addon list 
+osgi obr url add --url http://spring-roo-postgres-jdbc4-wrapper.googlecode.com/svn/repo/repository.xml
+osgi obr start --bundleSymbolicName org.postgresql.roo.wrapper.postgresql
+osgi obr url remove --url http://spring-roo-postgres-jdbc4-wrapper.googlecode.com/svn/repo/repository.xml
+addon install id 19
+pgp key view --keyId 0x36673F56
+pgp trust --keyId 0x36673F56
+osgi obr url add --url http://spring-roo-postgres-jdbc4-wrapper.googlecode.com/svn/repo/repository.xml
+osgi obr start --bundleSymbolicName org.postgresql.roo.wrapper.postgresql
+osgi obr url remove --url http://spring-roo-postgres-jdbc4-wrapper.googlecode.com/svn/repo/repository.xml
+addon install id 19
+database introspect --schema public
+database reverse engineer --schema public --package ~.domain --activeRecord true --enableViews false --includeTables true
+database reverse engineer --schema 'public' --package ~.domain --activeRecord true --enableViews false --includeTables true
+database reverse engineer --schema public --package ~.domain --activeRecord true --enableViews false --includeTables true
+database reverse engineer --schema public --package ~.domain --activeRecord true --enableViews false --includeTables true
+database introspect --schema public
+database reverse engineer --schema public --package ~.domain --activeRecord true --enableViews false --includeTables true
+database reverse engineer --schema public --package ~.domain --activeRecord true --enableViews false
+web jsf setup --implementation ORACLE_MOJARRA --library PRIMEFACES --theme SMOOTHNESS 
+backup
